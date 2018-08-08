@@ -1,7 +1,7 @@
 import spacy
 from sense2vec import Sense2VecComponent
-from facts_extractor import FactsExtractor
-from graph_entity_extractor import GraphEntityExtractor
+from components.facts_extractor import FactsExtractor
+from components.graph_entity_extractor import GraphEntityExtractor
 
 nlp = spacy.load('en')
 

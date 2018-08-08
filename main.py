@@ -11,9 +11,9 @@ This purpose of this project is
 
 import pandas as pd
 import numpy as np
-import debugger
+from tools import debugger
+from tools import corpus
 from pipeline_creator import nlp
-import corpus
 
 debugger.print_log(nlp.pipeline, 'overview')
 
@@ -47,6 +47,6 @@ def learn_from_document(doc):
 
 if __name__ == "__main__":
   docs = corpus.load_files()
-  doc = docs[2]
+  doc = docs[1]
   print(doc)
   learn_from_document(doc)

@@ -1,3 +1,5 @@
 bbc/*
 __pycache__/*
-reddit_vectors-1.1.0/*
+components/__pycache__/*
+model/__pycache__/*
+tools/__pycache__/*

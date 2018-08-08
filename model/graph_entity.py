@@ -1,0 +1,3 @@
+
+class GraphEntity(object):
+  pass

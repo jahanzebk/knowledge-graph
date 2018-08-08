@@ -9,26 +9,31 @@ As far as accuracy is concerned, we'd rather miss facts than pick up things that
 A way of breaking tasks down.
 
 ## In Progress
-- Create a spacy pipeline to create and store data according to the schema.
+- [EPIC] Create a spacy pipeline to create and store data according to the schema.
 
-- Run NER and store entities if an entity is a
-    PERSON
-    NORP
-    FACILITY
-    ORG
-    GPE
-    LOC 
-  and is also has atleast one proper noun? Make a separate pipeline component for this. Can you create a span around these?
-    - should we make a graph entity object now?
+- organize things into folders
 
-- Run DEP parser and extract "facts" by regexps (Xsub ... ROOT ... Xobj). Make this component more versatile. Patterns can be defined multiple ways
+- [LEXICAL] make a graph entity object
+
+- Make a git repo
+
+- [SYNTACTIC] Run DEP parser and extract "facts" by regexps (Xsub ... ROOT ... Xobj). Make this component more versatile. Patterns can be defined multiple ways
   - existing regexp methods
   - custom regexp parser using spacy id numbers or strings
   - a function for each match rule
 
-- Make a Fact Normalizer to look for other facts on that entity with synonym/same base/same concept root words and combine multiple sentences to be under one ACTION word (first ROOT verb found).
+- [LEXICAL] Make a Fact Normalizer to look for other facts on that entity with synonym/same base/same concept root words and combine multiple sentences to be under one ACTION word (first ROOT verb found).
 
-- Set up and experiment with what the data from the neural co ref library looks like
+- [OTHER] Set up and experiment with what the data from the neural co ref library looks like
+
+- extend debugger
+
+- clean up code
+
+- test all code written so far
+
+- create neo4j basic schema
+- [SEMANTIC] set up mysql or nosql schema for word profiles DB.
 
 ## Icebox
 - Get text database to work on
@@ -46,4 +51,11 @@ A way of breaking tasks down.
 - Get some documents to work on and create a class to read them in.
 - Load in docs
 - created debugger
-
+- Run NER and store entities if an entity is a
+    PERSON
+    NORP
+    FACILITY
+    ORG
+    GPE
+    LOC 
+  and is also has atleast one proper noun? Make a separate pipeline component for this. Can you create a span around these?
