@@ -11,11 +11,7 @@ A way of breaking tasks down.
 ## In Progress
 - [EPIC] Create a spacy pipeline to create and store data according to the schema.
 
-- organize things into folders
-
-- [LEXICAL] make a graph entity object
-
-- Make a git repo
+- [MGMT] Make a git repo
 
 - [SYNTACTIC] Run DEP parser and extract "facts" by regexps (Xsub ... ROOT ... Xobj). Make this component more versatile. Patterns can be defined multiple ways
   - existing regexp methods
@@ -26,14 +22,14 @@ A way of breaking tasks down.
 
 - [OTHER] Set up and experiment with what the data from the neural co ref library looks like
 
-- extend debugger
+- [TOOLS] extend debugger
 
-- clean up code
+- [MGMT] clean up code
 
-- test all code written so far
+- [MGMT] test all code written so far
 
-- create neo4j basic schema
-- [SEMANTIC] set up mysql or nosql schema for word profiles DB.
+- [SCHEMA] create neo4j basic schema
+- [SEMANTIC+SCHEMA] set up mysql or nosql schema for word profiles DB and make python class models. (separate project!)
 
 ## Icebox
 - Get text database to work on
@@ -45,13 +41,13 @@ A way of breaking tasks down.
 - Consider how you can use conceptnet.io web api or personal build (needs 30GB RAM) (https://github.com/commonsense/conceptnet5/wiki/API)
 
 ## Completed
-- Set up basic pipeline system to build on.
-- Read this 2012 thesis: https://digitalcommons.trinity.edu/cgi/viewcontent.cgi?article=1028&context=compsci_honors
+- [SETUP] Set up basic pipeline system to build on.
+- [RESEARCH] Read this 2012 thesis: https://digitalcommons.trinity.edu/cgi/viewcontent.cgi?article=1028&context=compsci_honors
 - Decided to stick to spacy since stanford semantic graph is really just dependency graphs and I need to get something done.
-- Get some documents to work on and create a class to read them in.
-- Load in docs
-- created debugger
-- Run NER and store entities if an entity is a
+- [SETUP] Get some documents to work on and create a class to read them in.
+- [TOOLS] Load in docs
+- [TOOLS] created debugger
+- [LEXICAL] Run NER and store entities if an entity is a
     PERSON
     NORP
     FACILITY
@@ -59,3 +55,5 @@ A way of breaking tasks down.
     GPE
     LOC 
   and is also has atleast one proper noun? Make a separate pipeline component for this. Can you create a span around these?
+- [ORG] organize things into folders
+- [LEXICAL+SCHEMA] make a graph entity object

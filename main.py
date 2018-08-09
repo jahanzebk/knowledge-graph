@@ -20,7 +20,7 @@ debugger.print_log(nlp.pipeline, 'overview')
 def learn_from_document(doc):
   analyzed_doc = nlp(doc)
   for ent in analyzed_doc._.graph_entities:
-    debugger.print_log(ent, 'temp')
+    debugger.print_log(ent.entity_text, 'temp')
 
   # for sent in analyzed_doc.sents:
   #   if sent._.has_fact:
