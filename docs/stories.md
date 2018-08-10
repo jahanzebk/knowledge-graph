@@ -11,11 +11,10 @@ A way of breaking tasks down.
 ## In Progress
 - [EPIC] Create a spacy pipeline to create and store data according to the schema.
 
-- [MGMT] Make a git repo
-
 - [SYNTACTIC] Run DEP parser and extract "facts" by regexps (Xsub ... ROOT ... Xobj). Make this component more versatile. Patterns can be defined multiple ways
   - existing regexp methods
-  - custom regexp parser using spacy id numbers or strings
+  - CHOSEN TO START> custom regexp parser using spacy id numbers or strings
+     - MIGHT be able to just use built in Matcher (or PhraseMatcher?) on tokens in sequence
   - a function for each match rule
 
 - [LEXICAL] Make a Fact Normalizer to look for other facts on that entity with synonym/same base/same concept root words and combine multiple sentences to be under one ACTION word (first ROOT verb found).
@@ -30,6 +29,8 @@ A way of breaking tasks down.
 
 - [SCHEMA] create neo4j basic schema
 - [SEMANTIC+SCHEMA] set up mysql or nosql schema for word profiles DB and make python class models. (separate project!)
+
+- [TOOLS] Add mini corpus to repo for testing
 
 ## Icebox
 - Get text database to work on
@@ -48,12 +49,8 @@ A way of breaking tasks down.
 - [TOOLS] Load in docs
 - [TOOLS] created debugger
 - [LEXICAL] Run NER and store entities if an entity is a
-    PERSON
-    NORP
-    FACILITY
-    ORG
-    GPE
-    LOC 
+    PERSON, NORP, FACILITY, ORG, GPE, LOC 
   and is also has atleast one proper noun? Make a separate pipeline component for this. Can you create a span around these?
 - [ORG] organize things into folders
 - [LEXICAL+SCHEMA] make a graph entity object
+- [MGMT] Make a git repo
