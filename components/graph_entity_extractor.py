@@ -24,7 +24,7 @@ class GraphEntityExtractor(object):
     if self.nlp.has_pipe('graph_entity'):
       self.nlp.remove_pipe('graph_entity')
 
-    Token.set_extension('is_graph_entity', default=True)
+    Token.set_extension('is_graph_entity', default=False)
     Doc.set_extension('graph_entities', default=[]) # string describing fact
 
   # find and label entities that qualify as graph entities

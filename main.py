@@ -20,13 +20,18 @@ debugger.print_log(nlp.pipeline, 'overview')
 def learn_from_document(doc):
   analyzed_doc = nlp(doc)
   for ent in analyzed_doc._.graph_entities:
-    debugger.print_log(ent.entity_text, 'temp')
+    debugger.print_log(ent.tokens[0], 'temp')
 
-  # for sent in analyzed_doc.sents:
-  #   if sent._.has_fact:
-  #     debugger.print_log(sent, 'temp')
-  #     debugger.print_log(sent._.fact, 'temp')
-  #     debugger.print_log('-----------', 'temp')
+  for sent in analyzed_doc.sents:
+    debugger.print_log(sent, 'temp')
+    if sent._.has_fact:
+      debugger.print_log('FACT', 'temp')
+      debugger.print_log(sent._.fact, 'temp')
+      for token in sent:
+        debugger.print_log(token.dep_, 'temp')
+        # debugger.print_log(token.pos_, 'temp')
+      #   debugger.print_log(token._.is_graph_entity, 'temp')
+    debugger.print_log('-----------', 'temp')
   #
   # started = False
   # tokens = []
@@ -48,5 +53,6 @@ def learn_from_document(doc):
 if __name__ == "__main__":
   docs = corpus.load_files()
   doc = docs[1]
+  # doc = 'Donald Trump slapped the good old Barrack Obama in the face. What a sight.'
   print(doc)
   learn_from_document(doc)
