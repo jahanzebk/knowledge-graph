@@ -12,7 +12,7 @@ class GraphEntityExtractor(object):
     # only include upto last PROPN
     last_propn_index = 0
     for i, word in enumerate(ent):
-      if word.pos_ == 'PROPN':
+      if word.pos_ == 'PROPN' or word.pos_ == 'NOUN':
         last_propn_index = i
     entity_main_parts = ent[:last_propn_index + 1]
 

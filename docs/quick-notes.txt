@@ -1,0 +1,13 @@
+
+
+LESSONS AUG 25
+
+From fact extractor:
+- working with n-grams at the matching level will make it more versatile
+- working with the DEP tree structure and using things like the compound DEP_ value will probably be a lot more useful
+- things like quotes may require their own rules
+- adding token matching to the fact extractor pattern matcher is a good idea
+- separating the pattern matching from the fact extractor is a good idea
+
+idea:
+- what if you could add an average of images of sorts for each word in the word profiles database

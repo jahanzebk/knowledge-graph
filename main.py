@@ -27,10 +27,10 @@ def learn_from_document(doc):
     if sent._.has_fact:
       debugger.print_log('FACT', 'temp')
       debugger.print_log(sent._.fact, 'temp')
-      for token in sent:
-        debugger.print_log(token.dep_, 'temp')
-        # debugger.print_log(token.pos_, 'temp')
-      #   debugger.print_log(token._.is_graph_entity, 'temp')
+    for token in sent:
+      debugger.print_log(token.dep_, 'temp')
+      debugger.print_log(token.pos_, 'temp')
+      # debugger.print_log(token._.is_graph_entity, 'temp')
     debugger.print_log('-----------', 'temp')
   #
   # started = False
@@ -52,7 +52,7 @@ def learn_from_document(doc):
 
 if __name__ == "__main__":
   docs = corpus.load_files()
-  doc = docs[1]
-  # doc = 'Donald Trump slapped the good old Barrack Obama in the face. What a sight.'
+  doc = docs[2]
+  # doc = 'Donald Trump slapped the good old Barrack Obama in the face. What a sight folks, what a sight.'
   print(doc)
   learn_from_document(doc)

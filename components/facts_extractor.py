@@ -29,6 +29,8 @@ class FactsExtractor(object):
       if spec_key == 'OR':
         bools_arr = [token_matches(token, next_id) for next_id in spec_val]
         matching = matching and any(bools_arr)
+      if spec_key == '*':
+        matching = False
     return matching
 
   def sentence_matches(self, sentence, pattern):
@@ -36,16 +38,26 @@ class FactsExtractor(object):
     match_start = -1
     match_end = -1
     pattern_len = len(pattern)
+    done = False
     for i, token in enumerate(sentence):
       if self.token_matches(token, pattern[pattern_index]):
         if pattern_index == 0:
           match_start = i
+
         pattern_index += 1
 
-      if pattern_index >= pattern_len:
-        match_end = i+1
-        return sentence[match_start:match_end]
-    return None
+        if pattern_index == pattern_len:
+          match_end = i+1
+          done = True
+          pattern_index -= 1
+      elif done:
+        match_end = i
+        break
+    
+    if match_end != -1:
+      return sentence[match_start:match_end]
+    else:
+      return None
 
 
 # nsubj:NER nsubj:NER verb,ROOT dobj pobj:NER

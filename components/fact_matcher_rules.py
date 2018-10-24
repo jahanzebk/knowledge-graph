@@ -1,7 +1,8 @@
 
 rules = [
-  [{'DEP_': 'nsubj'}, {'DEP_': 'ROOT', 'POS_': 'VERB'}, {'DEP_': 'dobj'}],
+  # [{'POS_': 'PROPN'}, {'DEP_': 'ROOT', 'POS_': 'VERB'}, {'DEP_': 'dobj'}],
   [{'is_graph_entity': True}, {'DEP_': 'ROOT', 'POS_': 'VERB'}, {'is_graph_entity': True}],
+  # [{'is_graph_entity': True}, {'POS_': 'VBD'}, {'*': "all"}],
 ]
 
 # HOW can you make a rule system that allows for something like:
